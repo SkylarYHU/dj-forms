@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Contact Form</h1>
+  <form method="post">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+    {% comment %} <div class="name">
+      <label for="id_name">Name: </label>
+      {{ form.name }}
+    </div>
+
+    <div class="email">
+      <label for="id_email">Email: </label>
+      {{ form.email }}
+    </div>
+
+    <div class="message">
+      <label for="id_message">Message: </label>
+      {{ form.message }}
+    </div>
+{% endcomment %}
+    <button type="submit">Submit</button> 
+  </form>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+</head>
+<body>
+  <h1>Welcome</h1>
+  <div class="contact">
+    <a href="{% url 'contact' %}">Leave a message</a>
+  </div>
+
+  <div class="upload">
+    <a href="{% url 'upload' %}">Upload Files</a>
+  </div>
+
+  <div class="uploaded-file-list">
+    <a href="{% url 'success' %}">Uploaded File List</a>
+  </div>
+</body>
+</html>

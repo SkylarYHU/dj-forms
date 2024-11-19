@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uploaded Files</title>
+  <!-- 引入 FontAwesome 的在线样式 -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    ul {
+      list-style: none; /* 移除默认列表样式 */
+      padding: 0;
+    }
+    li {
+      margin: 10px 0;
+      font-size: 16px;
+    }
+    i {
+      margin-right: 10px;
+      font-size: 18px;
+      vertical-align: middle;
+    }
+    a {
+      text-decoration: none;
+      color: black;
+    }
+    a:hover {
+      color: blue;
+    }
+    small {
+      color: gray;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Upload Successful</h1>
+  <p>Here are the uploaded files:</p>
+  <ul>
+
+    {% for file in files %}
+    <li>
+      <!-- 使用视图中定义的图标类 -->
+      <i class="{{ file.icon_class }}"></i>
+      <!-- 使用视图中定义的 display_name -->
+      <a href="{{ file.file.url }}" target="_blank">{{ file.display_name }}</a>
+      <small style="color: gray;">{{ file.uploaded_at|date:"F d, Y, h:i a" }}</small>
+    </li>
+    {% endfor %}
+  </ul>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Upload File</h1>
+  {% comment %} 当表单中包含 文件上传字段（例如图片、PDF 等）时，默认的表单编码方式 application/x-www-form-urlencoded 无法正确传输文件数据。因此，需要将表单的编码方式设置为 multipart/form-data {% endcomment %}
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Upload</button>
+  </form>
+</body>
+</html>
